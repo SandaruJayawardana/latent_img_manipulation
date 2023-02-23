@@ -210,7 +210,8 @@ class StyleGANInverter(object):
 
       if num_viz > 0 and step % (self.iteration // num_viz) == 0:
         viz_results.append(self.G.postprocess(_get_tensor_value(x_rec))[0])
-
+      if loss < 0.05:
+        return
     return _get_tensor_value(z), viz_results, loss
 
   def easy_invert(self, image, num_viz=0):
