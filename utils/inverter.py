@@ -282,7 +282,7 @@ class StyleGANInverter(object):
       viz_results[it].append(copy_and_paste[it])
       viz_results[it].append(encoder_out[it])
 
-    pbar = tqdm(range(1, self.iteration + 1), leave=True)
+    pbar = (range(1, self.iteration + 1), leave=True)
     for step in pbar:
       loss = 0.0
 
